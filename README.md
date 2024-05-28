@@ -1,7 +1,7 @@
 # Go course
 > Внимание!
 > Перед началом, нужно сделать fork данного репозитория в свой аккаунт.
-> Далее добавить в ревьюеры Zadinalmaz
+> Далее добавить в ревьюеры (https://github.com/Goganad) Goganad
 
 > Сделайте git clone вашего репозитория в $GOPATH/src/student.vkusvill.ru/<your_username>/go-course
 > Инициализируйте модули `go mod init student.vkusvill.ru/<your_username>/go-course
