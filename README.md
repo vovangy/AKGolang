@@ -1,7 +1,7 @@
 # Go course
 > Внимание!
 > Перед началом, нужно сделать fork данного репозитория в свой аккаунт.
-> Далее пройти в Project information -> Members и добавить в проект участника `go-mentor` с правами `Maintainer`.
+> Далее добавить в ревьюеры Zadinalmaz
 
 > Сделайте git clone вашего репозитория в $GOPATH/src/student.vkusvill.ru/<your_username>/go-course
 > Инициализируйте модули `go mod init student.vkusvill.ru/<your_username>/go-course
