@@ -13,8 +13,10 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
 	github.com/ksrof/gocolors v0.1.0 // indirect
+	github.com/mattevans/dinero v0.8.0 // indirect
 	github.com/mattn/go-colorable v0.0.0-20170327083344-ded68f7a9561 // indirect
 	github.com/mattn/go-isatty v0.0.3 // indirect
+	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/peterh/liner v0.0.0-20170317030525-88609521dc4b // indirect
 	github.com/russross/blackfriday v1.5.2 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
@@ -23,6 +25,6 @@ require (
 	github.com/spf13/pflag v0.0.0-20170417173400-9e4c21054fa1 // indirect
 	go.starlark.net v0.0.0-20200821142938-949cc6f4b097 // indirect
 	golang.org/x/arch v0.0.0-20190927153633-4e8777c89be4 // indirect
-	golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae // indirect
-	gopkg.in/yaml.v2 v2.2.1 // indirect
+	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
