@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func Factorial(n int) int {
+	if n <= 1 {
+		return 1
+	}
+
+	return Factorial(n-1) * n
+}
+
+func main() {
+	fmt.Println(Factorial(5))
+}
