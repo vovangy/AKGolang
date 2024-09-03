@@ -46,6 +46,8 @@ func CallService() string {
 		}
 	}
 
+	time.Sleep(1 * time.Second)
+
 	checkService(serviceLocator)
 
 	return result
@@ -96,7 +98,7 @@ func (s *ServiceLocator) doRequest(ctx context.Context, url string) (string, err
 }
 
 func checkService(s *ServiceLocator) {
-	if !s.slow {
+	if s.slow {
 		panic("error: slow service called")
 	}
 	if !s.fast {
