@@ -23,7 +23,7 @@ func getUniqueUsers(users []User) []User {
 		}
 	}
 
-	return uniqueUsers
+	return append(make([]User, 0, len(uniqueUsers)), uniqueUsers...)
 }
 
 func main() {

@@ -65,6 +65,31 @@ func CheckUpper(old, new string) string {
 	return new
 }
 
+func createUniqueText(text string) string {
+	uniqueWords := map[string]struct{}{}
+	arrayWords := []string{}
+
+	words := strings.Fields(text)
+
+	for _, word := range words {
+		if _, ok := uniqueWords[strings.ToLower(word)]; ok == false {
+			uniqueWords[strings.ToLower(word)] = struct{}{}
+			arrayWords = append(arrayWords, word)
+		}
+	}
+
+	separator := ""
+
+	resultString := ""
+
+	for _, value := range arrayWords {
+		resultString += separator + value
+		separator = " "
+	}
+
+	return resultString
+}
+
 func filterWords(text string, censorMap map[string]string) string {
 	sentences := splitSentences(text)
 
@@ -94,7 +119,7 @@ func filterWords(text string, censorMap map[string]string) string {
 		}
 	}
 
-	return WordsToSentence(words)
+	return createUniqueText(WordsToSentence(words))
 }
 
 func main() {

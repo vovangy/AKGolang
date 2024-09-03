@@ -21,7 +21,7 @@ func getType(i interface{}) string {
 	case []int:
 		result = "[]int"
 	default:
-		result = "Неизвестный типы"
+		result = "Неизвестный тип"
 	}
 
 	return result
