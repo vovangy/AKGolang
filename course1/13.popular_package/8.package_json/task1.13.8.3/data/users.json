@@ -1,0 +1,23 @@
+[
+  {
+    "name": "John",
+    "age": 30,
+    "comments": [
+      {
+        "text": "Great post!"
+      },
+      {
+        "text": "I agree"
+      }
+    ]
+  },
+  {
+    "name": "Alice",
+    "age": 25,
+    "comments": [
+      {
+        "text": "Nice article"
+      }
+    ]
+  }
+]
