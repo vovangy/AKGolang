@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: main.Dockerfile
+    ports:
+      - "8080:8080"
+
+  hugo:
+    build:
+      context: ./hugo
+      dockerfile: main.Dockerfile
+    ports:
+      - "1313:1313"

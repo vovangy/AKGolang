@@ -1,0 +1,95 @@
+basePath: /api
+definitions:
+  main.Address:
+    properties:
+      country:
+        type: string
+      country_code:
+        type: string
+      county:
+        type: string
+      postcode:
+        type: string
+      road:
+        type: string
+      state:
+        type: string
+      town:
+        type: string
+    type: object
+  main.RequestAddressGeocode:
+    properties:
+      lat:
+        type: number
+      lng:
+        type: number
+    type: object
+  main.ResponseAddress:
+    properties:
+      address:
+        $ref: '#/definitions/main.Address'
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is an API for searching addresses and geocoding.
+  title: Address Search API
+  version: "1.0"
+paths:
+  /api/address/geocode:
+    post:
+      consumes:
+      - application/json
+      description: Converts an address into geographic coordinates.
+      parameters:
+      - description: Address Data
+        in: body
+        name: address
+        required: true
+        schema:
+          $ref: '#/definitions/main.ResponseAddress'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'Coordinate: Lon: Longitude, Lat: Latitude'
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Geocode address to coordinates
+  /api/address/search:
+    post:
+      consumes:
+      - application/json
+      description: Search address based on latitude and longitude.
+      parameters:
+      - description: Lat and Lng
+        in: body
+        name: address
+        required: true
+        schema:
+          $ref: '#/definitions/main.RequestAddressGeocode'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'You are in Country: Country, Town: Town, Road: Road'
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Search address by coordinates
+swagger: "2.0"

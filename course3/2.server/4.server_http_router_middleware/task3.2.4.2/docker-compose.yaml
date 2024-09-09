@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  main:
+    container_name: avtomakon
+    build:
+      context: .
+      dockerfile: ./main.Dockerfile
+    ports:
+      - '8080:${PORT}'
+    env_file:
+      - .env
+
