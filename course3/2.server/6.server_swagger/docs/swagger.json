@@ -1,0 +1,146 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is an API for searching addresses and geocoding.",
+        "title": "Address Search API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "paths": {
+        "/api/address/geocode": {
+            "post": {
+                "description": "Converts an address into geographic coordinates.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Geocode address to coordinates",
+                "parameters": [
+                    {
+                        "description": "Address Data",
+                        "name": "address",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ResponseAddress"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Coordinate: Lon: Longitude, Lat: Latitude",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/address/search": {
+            "post": {
+                "description": "Search address based on latitude and longitude.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Search address by coordinates",
+                "parameters": [
+                    {
+                        "description": "Lat and Lng",
+                        "name": "address",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.RequestAddressGeocode"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "You are in Country: Country, Town: Town, Road: Road",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.Address": {
+            "type": "object",
+            "properties": {
+                "country": {
+                    "type": "string"
+                },
+                "country_code": {
+                    "type": "string"
+                },
+                "county": {
+                    "type": "string"
+                },
+                "postcode": {
+                    "type": "string"
+                },
+                "road": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "town": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.RequestAddressGeocode": {
+            "type": "object",
+            "properties": {
+                "lat": {
+                    "type": "number"
+                },
+                "lng": {
+                    "type": "number"
+                }
+            }
+        },
+        "main.ResponseAddress": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/main.Address"
+                }
+            }
+        }
+    }
+}
